@@ -1,3 +1,4 @@
+#! /usr/bin/bash
 echo -n "Enter 1st No : "
 read first
 echo -n "Enter 2nd No : "
