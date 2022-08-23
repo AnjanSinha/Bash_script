@@ -1,3 +1,0 @@
-#! /usr/bin/python3
-a,b ,c = map(int, input().split())
-print(a+b+c)
