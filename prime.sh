@@ -2,21 +2,13 @@
 #Write a shell program that can check whether a number is a "Prime" or "not Prime"
 echo -n "Enter a number : "
 read num
-i=2
-rem=1
-if [ $num -lt 2 ]
-then
-    echo -e "$num is not prime"
-    exit 0
-fi  
-while [ $i -le `expr $num / 2` || $rem -ne 0 ] 
+for ((i=2; i<=$num/2; i++))
 do
-    rem=`expr $num % $i`
-    i=`expr $i + 1`
+ 	ans=$(( $num%i ))
+	if [ $ans -eq 0 ]
+	then
+		echo "$num is not a prime number."
+		exit 0
+	fi
 done
-if [ $rem -ne 0 ] 
-then
-    echo -e "$num is prime"
-else
-    echo -e "$num is not prime"
-fi
+echo "$num is a prime number."
